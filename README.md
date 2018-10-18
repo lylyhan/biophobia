@@ -34,6 +34,7 @@ better be a harmonic one,
 
 if not simple - 
 
+////////////////////
 
 the boy and the girl,
 
@@ -46,6 +47,9 @@ the faeces and the laces
 the mermaids and the goblins
 
 
+//////////////////////
+
+
 he saw the light,
 
 leaking from between the two
@@ -53,6 +57,9 @@ leaking from between the two
 is it either or
 
 or both and 
+
+
+//////////////////////
 
 
 the peacock spreaded its tail and its color and texture too secure
@@ -64,12 +71,17 @@ a cup that never spills
 a moon that never eats
 
 
+//////////////////////
+
+
 more importantly, 
 
 it moved its beak and the only sound coming out is that of a peacock
 
 maybe he is expecting a duck after all
 
+
+//////////////////////
 
 
 and what happened to the cat 
@@ -83,6 +95,10 @@ until it finished its latest dream,
 in which he did not appear 
 
 and in silence it walked away
+
+
+//////////////////////
+
 
 
 and so concluded neither nor
