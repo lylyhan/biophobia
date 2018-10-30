@@ -25,15 +25,13 @@ class tentacles{
     specified.
     adjustable parameters include diameters of both the center tube and surrounding volcano, and how tall the structure is
     */
-//println(mouseX/x);
     
     for(int i=0;i<width/x;i+=2){
         for(int j=0;j<height/y;j+=1){
           float tall2=tall;
           //store scales of random x,y coord in each grid
           if(i<width/x-1){
-            //println(mouseX/x,i);
-             //print(sq(i)+sq(j)-sq(mouseX/x)-sq(mouseY/y));
+            //you brought me the light
              if(abs(sq(i-20)+sq(j-20)-sq(mouseX/x-20)-sq(mouseY/y-20))<2){
                     if(mousePressed==true){
                     //println("yat");

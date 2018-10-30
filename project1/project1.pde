@@ -56,7 +56,7 @@ t.bleed(var,tall,random(40,80));
 }
 
 
-//when pressing any key and moving mouse, get rising sprinkles
+//when pressing any key and moving mouse, get evaporating sprinkles/arrows
 if(keyPressed==true){
   PVector pos= new PVector(mouseX+noise(20),mouseY+noise(20),0);
 keyPressed(pos);
@@ -69,15 +69,25 @@ keyPressed(pos);
 }
 
 void keyPressed(PVector pos){
-//draw the particle cloud
+//draw the particle cloud, dark red flakes
 
   particles.add(new Particles(pos));
   for (int i = 0; i < particles.size(); i++) {
   Particles part = particles.get(i);
-  part.vanish();
+  part.move();
   
   if(part.isdead==true){
     particles.remove(i);
+  }
+}
+//draw the arising white spinkles/arrows
+ particles2.add(new Particles(pos));
+  for (int i = 0; i < particles2.size(); i++) {
+  Particles part2 = particles2.get(i);
+  part2.vanish();
+  
+  if(part2.isdead==true){
+    particles2.remove(i);
   }
 }
 //println(particles.size());

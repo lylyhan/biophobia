@@ -21,6 +21,8 @@ class Particles{
   accel=new PVector(0,2*a*b,-0.2);  
   }
   void move(){
+    //make the red flakes swirl!!
+    
     //radius of the trajectory
     r=lifespan*a*sign+10;
     
@@ -48,9 +50,8 @@ class Particles{
     lifespan+=1;
   }
   void vanish(){
-  //lantern(position);
+  //make the white sprinkles rise!
   randshape3(position,10);
-  //lantern(position);
   vel=new PVector(0,0,5);
   accel=new PVector(0,0.5);
   vel.add(accel);
@@ -61,6 +62,7 @@ class Particles{
   }
   
   void vanish2(){
+    //to be used, arising lanterns
   lantern(position);
   vel=new PVector(0,0,10);
   accel=new PVector(0,1);
@@ -75,13 +77,12 @@ class Particles{
 }
 
 void randshape2(PVector pos,float r){
+  //the red flakes, swirling in space
  pushMatrix();
  translate(pos.x,pos.y,pos.z);
 float ang=random(0,360);
 strokeWeight(random(0,10));
 strokeCap(SQUARE);
-//stroke(104,80,0);
-//stroke(random(0,255),random(0,255),random(0,255),100);
 stroke(41,26,21);
 line(0,0,r*cos(ang),r/2*sin(ang));
 
@@ -92,6 +93,7 @@ popMatrix();
 }
 
 void randshape3(PVector pos,float r){
+  //the white alien sprinkles, sharp lights
  pushMatrix();
  translate(pos.x,pos.y,pos.z);
 strokeWeight(1);
@@ -111,7 +113,7 @@ popMatrix();
 
 
 void lantern(PVector pos){
-  
+//to be used, magic mushrooms
 translate(pos.x,pos.y,pos.z);
 rotateY(HALF_PI*3/4);
 
