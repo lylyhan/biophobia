@@ -25,16 +25,33 @@ class tentacles{
     specified.
     adjustable parameters include diameters of both the center tube and surrounding volcano, and how tall the structure is
     */
+//println(mouseX/x);
+    
     for(int i=0;i<width/x;i+=2){
         for(int j=0;j<height/y;j+=1){
+          float tall2=tall;
           //store scales of random x,y coord in each grid
           if(i<width/x-1){
+            //println(mouseX/x,i);
+             //print(sq(i)+sq(j)-sq(mouseX/x)-sq(mouseY/y));
+             if(abs(sq(i-20)+sq(j-20)-sq(mouseX/x-20)-sq(mouseY/y-20))<2){
+                    if(mousePressed==true){
+                    //println("yat");
+                    
+                    tall2=tall*2;
+                  }
+              
+                
+                
+                }
             beginShape();
               for(int k=0;k<360;k+=10){
+                //extend the height of a specific tube
+               
                 //draw the volcano
-                generate_arc(innerx*cos(k)+tentx[i][j],innerx/2*sin(k)+tenty[i][j],(innerx+diameter)*cos(k)+tentx[i][j],(innerx+diameter)*sin(k)+tenty[i][j],40,-1,tall,0,0);
+                generate_arc(innerx*cos(k)+tentx[i][j],innerx/2*sin(k)+tenty[i][j],(innerx+diameter)*cos(k)+tentx[i][j],(innerx+diameter)*sin(k)+tenty[i][j],40,-1,tall2,0,0);
                 //draw the tube
-                generate_arc(innerx*cos(k)+tentx[i][j],innerx/2*sin(k)+tenty[i][j],innerx*cos(k+180)+tentx[i][j],innerx/2*sin(k+180)+tenty[i][j],0,1,2*tall,0,0);
+                generate_arc(innerx*cos(k)+tentx[i][j],innerx/2*sin(k)+tenty[i][j],innerx*cos(k+180)+tentx[i][j],innerx/2*sin(k+180)+tenty[i][j],0,1,2*tall2,0,0);
              }
             endShape();
           
@@ -88,7 +105,7 @@ class tentacles{
 
 
 
-}
+
 
 
 
@@ -115,4 +132,4 @@ void generate_arc(float px,float py, float x, float y, float angle,int sign,floa
      
 
       }
-      
+}

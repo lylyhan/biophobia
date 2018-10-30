@@ -14,6 +14,7 @@ float tall=80;
 float var;
 float angle;
 ArrayList<Particles> particles=new ArrayList<Particles>();
+ArrayList<Particles> particles2=new ArrayList<Particles>();
 
 
 void setup(){
@@ -28,7 +29,7 @@ background(0);
 tributex=5*sin(frameCount/5);
 stroke(128,107,67,100);
 strokeWeight(1);
-tall=70;
+tall=100;
 //tall=sqrt(sq(mouseX)+sq(mouseY))/width*2*160;
 var=20+10*mouseX/float(width);
 angle=40+mouseX/float(width);
@@ -40,42 +41,29 @@ strokeWeight(1);
 stroke(56,35,7,120);
 t.draw3dtent(var/2,0,tall+20*sin(frameCount));
 //t.draw3dtent(var*2,0,tall/2);
-if(tall>130){
+}
+if(key=='b'){
 //third layer: blue flames
 strokeWeight(2);
 stroke(12,25,38,100);
 t.bleed(var,tall,random(40,80));
-if(tall>160){
+}
+if(key=='c'){
 //fourth layer: green flames
 strokeWeight(2);
 stroke(9,48,0,100);
 t.bleed(var,tall,random(40,80));
 }
 
-}
-}
-//t.scales(10,tall,20,tall/3);
-//rotateX(PI/8);
+
+//when pressing any key and moving mouse, get rising sprinkles
 if(keyPressed==true){
   PVector pos= new PVector(mouseX+noise(20),mouseY+noise(20),0);
 keyPressed(pos);
 }
-loadPixels();
-//println("ss",pixels.length);
-for (int x = 0; x<width; x+=1) {
-  for(int y = 0; y<height; y+=1){
-    int loc=(x+(y*width));
-    if(x>1){
-      if(x%gridsize==2){
-       //pixels[loc]=img.pixels[loc];
-    pixels[loc]=(pixels[loc-1]+pixels[loc])*2;
-      }
-    }
-    
-}
-}
-updatePixels();
 
+
+//pixelchange();
 
 
 }
@@ -86,12 +74,11 @@ void keyPressed(PVector pos){
   particles.add(new Particles(pos));
   for (int i = 0; i < particles.size(); i++) {
   Particles part = particles.get(i);
-  part.move();
+  part.vanish();
+  
   if(part.isdead==true){
     particles.remove(i);
   }
 }
-
+//println(particles.size());
 }
-
- 
